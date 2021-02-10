@@ -1,0 +1,49 @@
+.headimage {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../media/portada2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .scrolled {
+    background-color: rgb(99, 48, 119) !important;
+    transition: background-color 200ms linear;
+    color: white im !important;
+  }
+
+  .navbar-expand-lg li a{
+      background-color: transparent;
+      transition: background-color 200ms linear;
+      color: white !important;
+  }
+
+  .titol {
+      color: rgb(255, 255, 255);
+  }
+
+  .navbarLogo {
+      width: 40px;
+      height: 40px;
+  } 
+
+  .footer {
+      background-color: rgb(99, 48, 119) !important;
+      padding-left: 0;
+      padding-right: 0;
+  }
+  .fab {
+      color:white;
+      font-size: 4rem;
+      padding-right: 1rem;
+  }
+  #logomcecc {
+      width: 20rem;
+      height: auto;
+      padding-right: 1rem;
+  }
+  #logosubirats {
+      width: 14rem;
+      height: auto;
+  }
