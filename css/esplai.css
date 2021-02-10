@@ -50,3 +50,14 @@
   .copyright {
     background-color: rgba(0, 0, 0, 0.2)
   }
+  .fotoindex {
+      height: 17rem;
+      width: 17rem;
+  }
+  .titolindex {
+      color: black;
+      text-decoration-color: black;
+  }
+  a{
+      color: black;
+  }
