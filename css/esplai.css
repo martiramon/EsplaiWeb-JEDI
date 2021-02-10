@@ -22,7 +22,7 @@
   .scrolled {
     background-color: rgb(99, 48, 119) !important;
     transition: background-color 200ms linear;
-    color: white im !important;
+    color: white !important;
   }
 
   .navbar-expand-lg li a{
@@ -30,7 +30,10 @@
       transition: background-color 200ms linear;
       color: white !important;
   }
-
+  #navbarfixed {
+    background-color: rgb(99, 48, 119) !important;
+    color: white !important;
+  }
   .titol {
       color: rgb(255, 255, 255);
   }
