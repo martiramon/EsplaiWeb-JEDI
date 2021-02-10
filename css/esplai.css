@@ -47,3 +47,6 @@
       width: 14rem;
       height: auto;
   }
+  .copyright {
+    background-color: rgba(0, 0, 0, 0.2)
+  }
