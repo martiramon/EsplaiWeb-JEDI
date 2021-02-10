@@ -1,4 +1,5 @@
-.headimage {
+@media screen and (orientation: landscape) {
+    .headimage {
     height: 100vh;
     min-height: 500px;
     background-image: url('../media/portada2.jpg');
@@ -6,7 +7,18 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+}
 
+@media screen and (orientation: portrait) {
+    .headimage {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../media/portadavertical.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
   .scrolled {
     background-color: rgb(99, 48, 119) !important;
     transition: background-color 200ms linear;
