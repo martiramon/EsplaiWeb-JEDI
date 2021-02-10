@@ -19,62 +19,81 @@
     background-repeat: no-repeat;
   }
 }
-  .scrolled {
-    background-color: rgb(99, 48, 119) !important;
+.scrolled {
+background-color: rgb(99, 48, 119) !important;
+transition: background-color 200ms linear;
+color: white !important;
+}
+
+.navbar-expand-lg li a{
+    background-color: transparent;
     transition: background-color 200ms linear;
     color: white !important;
-  }
+}
+#navbarfixed {
+background-color: rgb(99, 48, 119) !important;
+color: white !important;
+}
+.titol {
+    color: rgb(255, 255, 255);
+}
 
-  .navbar-expand-lg li a{
-      background-color: transparent;
-      transition: background-color 200ms linear;
-      color: white !important;
-  }
-  #navbarfixed {
+.navbarLogo {
+    width: 40px;
+    height: 40px;
+} 
+
+.footer {
     background-color: rgb(99, 48, 119) !important;
-    color: white !important;
-  }
-  .titol {
-      color: rgb(255, 255, 255);
-  }
+    padding-left: 0;
+    padding-right: 0;
+}
+.fab {
+    color:white;
+    font-size: 4rem;
+    padding-right: 1rem;
+}
+#logomcecc {
+    width: 20rem;
+    height: auto;
+    padding-right: 1rem;
+}
+#logosubirats {
+    width: 14rem;
+    height: auto;
+}
+.copyright {
+background-color: rgba(0, 0, 0, 0.2)
+}
+.fotoindex {
+    height: 17rem;
+    width: 17rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.titolindex {
+    color: black;
+    text-decoration-color: black;
+}
+a{
+    color: black;
+}
 
-  .navbarLogo {
-      width: 40px;
-      height: 40px;
-  } 
-
-  .footer {
-      background-color: rgb(99, 48, 119) !important;
-      padding-left: 0;
-      padding-right: 0;
-  }
-  .fab {
-      color:white;
-      font-size: 4rem;
-      padding-right: 1rem;
-  }
-  #logomcecc {
-      width: 20rem;
-      height: auto;
-      padding-right: 1rem;
-  }
-  #logosubirats {
-      width: 14rem;
-      height: auto;
-  }
-  .copyright {
-    background-color: rgba(0, 0, 0, 0.2)
-  }
-  .fotoindex {
-      height: 17rem;
-      width: 17rem;
-      margin-bottom: 1rem;
-      margin-top: 1rem;
-  }
-  .titolindex {
-      color: black;
-      text-decoration-color: black;
-  }
-  a{
-      color: black;
-  }
+hr {
+    height: 10px !important;
+    width: 50%;
+    color: rgb(99, 48, 119);
+    margin-top: 0;
+}
+@media screen and (max-width: 484px) {
+    #logo {
+    height: 15rem;
+    width: auto;
+    }
+}
+@media screen and (min-width: 485px) {
+    #logo {
+    width: 100%;
+    height: auto;
+    }
+}
