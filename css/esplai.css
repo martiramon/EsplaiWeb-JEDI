@@ -53,6 +53,8 @@
   .fotoindex {
       height: 17rem;
       width: 17rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
   }
   .titolindex {
       color: black;
