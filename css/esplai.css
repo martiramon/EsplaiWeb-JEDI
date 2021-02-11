@@ -96,4 +96,7 @@ hr {
     width: 100%;
     height: auto;
     }
-}
+    p {
+        text-align: justify;
+        text-justify: inter-word;
+    }
