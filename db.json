@@ -1,0 +1,28 @@
+{
+    "monitors": [
+      {
+        "id": 1,
+        "name": "Martí",
+        "edat": 24,
+        "grup": "grans",
+        "email": "marti@gmail.com",
+        "password": "1234"
+      },
+      {
+        "id": 2,
+        "name": "Marta",
+        "edat": 24,
+        "grup": "joves",
+        "email": "marta@gmail.com",
+        "password": "1234"
+      },
+      {
+        "id": 3,
+        "name": "Laia",
+        "edat": 20,
+        "grup": "petits",
+        "email": "laia@gmail.com",
+        "password": "1234"
+      }
+    ]
+  }
