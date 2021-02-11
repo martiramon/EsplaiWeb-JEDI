@@ -1,3 +1,7 @@
+body {
+    font-size: 1.1rem;
+}
+
 @media screen and (orientation: landscape) {
     .headimage {
     height: 100vh;
@@ -85,18 +89,37 @@ hr {
     color: rgb(99, 48, 119);
     margin-top: 0;
 }
-@media screen and (max-width: 484px) {
+@media screen and (max-width: 769px) {
     #logo {
     height: 15rem;
     width: auto;
     }
+    iframe {
+        width: 100%;
+        height: auto;
+    }
 }
-@media screen and (min-width: 485px) {
+@media screen and (min-width: 770px) {
     #logo {
     width: 100%;
     height: auto;
     }
-    p {
+    .justificat {
         text-align: justify;
         text-justify: inter-word;
     }
+    iframe {
+        width: 700px;
+        height: 394px;
+    }
+}
+
+.fotosjuntes {
+    width: 100%;
+    height: auto;
+}
+
+.fotosencera {
+    width: 75%;
+    height: auto;
+}
