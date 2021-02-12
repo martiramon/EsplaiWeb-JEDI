@@ -12,25 +12,31 @@ $(function() {
         submit: async function(e) {
             e.preventDefault();
             if ($('.alert')) $('.alert').remove();
-            try {
-                const response = await axios.get("https://esplaisolnaixent.herokuapp.com/monitors/?Email=" + $('#inputEmail3').val());
-                const data = await response.data;
-                if (data[0]) {
-                    if (data[0].password === $('#inputPassword3').val()) {
-                        localStorage.setItem('logged', 'true');
-                        window.location.replace("monitors.html");
+            if ($('#inputEmail3').val() ==" ") {
+                $('#titollogin').after(`<div class="alert alert-danger" role="alert">
+                        Email i/o contrassenya incorrectes!
+                        </div>`);
+            } else {
+                try {
+                    const response = await axios.get("https://esplaisolnaixent.herokuapp.com/monitors/?Email=" + $('#inputEmail3').val());
+                    const data = await response.data;
+                    if (data[0]) {
+                        if (data[0].password === $('#inputPassword3').val()) {
+                            localStorage.setItem('logged', 'true');
+                            window.location.replace("monitors.html");
+                        } else {
+                            $('#titollogin').after(`<div class="alert alert-danger" role="alert">
+                            Email i/o contrassenya incorrectes!
+                            </div>`);
+                        }   
                     } else {
                         $('#titollogin').after(`<div class="alert alert-danger" role="alert">
                         Email i/o contrassenya incorrectes!
-                        </div>`)
-                    }   
-                } else {
-                    $('#titollogin').after(`<div class="alert alert-danger" role="alert">
-                    Email i/o contrassenya incorrectes!
-                    </div>`)
+                        </div>`);
+                    }
+                } catch (error) {
+                    console.log(error); 
                 }
-            } catch (error) {
-                console.log(error); 
             }
         }
     });
@@ -41,36 +47,41 @@ $(function() {
         submit: async function(e) {
             e.preventDefault();
             if ($('.alert')) $('.alert').remove();
-            try {
-                const response = await axios.get("https://esplaisolnaixent.herokuapp.com/monitors/?Email=" + $('#inputEmail3').val());
-                const data = await response.data;
-                if (data[0]) {
-                        $('#titolsignup').after(`<div class="alert alert-danger" role="alert">
-                        Ja existeix un usuari amb aquest Email!
-                        </div>`) 
-                } else {
-                    var nom = $('#inputName').val();
-                    var edat = $('#inputAge').val();
-                    var email = $('#inputEmail3').val();
-                    var contrasenya = $('#inputPassword3').val();
-                    var grup = $('input[name=gridRadios]:checked', '#formsignup').val();
-                    var monitor = { 'Nom': nom, 'Edat': edat, 'Grup': grup, 'Email': email, 'password': contrasenya}
-                    try {
-                        const response = await axios.post("https://esplaisolnaixent.herokuapp.com/monitors/", monitor);
-                        const data = await response.status;
-                        console.log(data);
-                        if (data === 201) {
-                            console.log("iiiiiiii");
-                            alert("Usuari " + nom + " creat, s'ha enviat un correu electrònic de confirmació");
-                            localStorage.setItem('logged', 'true');
-                            window.location.replace("monitors.html");
-                        }  
-                    } catch (error) {
-                        console.log(error); 
+            if ($('#inputEmail3').val() ==" ") {
+                $('#titollogin').after(`<div class="alert alert-danger" role="alert">
+                        Email i/o contrassenya incorrectes!
+                        </div>`);
+            } else {
+                try {
+                    const response = await axios.get("https://esplaisolnaixent.herokuapp.com/monitors/?Email=" + $('#inputEmail3').val());
+                    const data = await response.data;
+                    if (data[0]) {
+                            $('#titolsignup').after(`<div class="alert alert-danger" role="alert">
+                            Ja existeix un usuari amb aquest Email!
+                            </div>`) 
+                    } else {
+                        var nom = $('#inputName').val();
+                        var edat = $('#inputAge').val();
+                        var email = $('#inputEmail3').val();
+                        var contrasenya = $('#inputPassword3').val();
+                        var grup = $('input[name=gridRadios]:checked', '#formsignup').val();
+                        var monitor = { 'Nom': nom, 'Edat': edat, 'Grup': grup, 'Email': email, 'password': contrasenya}
+                        try {
+                            const response = await axios.post("https://esplaisolnaixent.herokuapp.com/monitors/", monitor);
+                            const data = await response.status;
+                            if (data === 201) {
+                                console.log("iiiiiiii");
+                                alert("Usuari " + nom + " creat, s'ha enviat un correu electrònic de confirmació");
+                                localStorage.setItem('logged', 'true');
+                                window.location.replace("monitors.html");
+                            }  
+                        } catch (error) {
+                            console.log(error); 
+                        }
                     }
+                } catch (error) {
+                    console.log(error); 
                 }
-            } catch (error) {
-                console.log(error); 
             }
         }
     });
