@@ -2,6 +2,7 @@ $(document).on("scroll",  function () {
     var $nav = $(".navbar");
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
 });
+
 function logout() {
     localStorage.clear();
     window.location.replace("monitors.html");
@@ -45,12 +46,26 @@ $(function() {
                 const data = await response.data;
                 if (data[0]) {
                         $('#titolsignup').after(`<div class="alert alert-danger" role="alert">
-                        Email ja regsitra't!
+                        Ja existeix un usuari amb aquest Email!
                         </div>`) 
                 } else {
-                    $('#titollogin').after(`<div class="alert alert-danger" role="alert">
-                    Email i/o contrassenya incorrectes!
-                    </div>`)
+                    var nom = $('#inputName').val();
+                    var edat = $('#inputAge').val();
+                    var email = $('inputEmail3').val();
+                    var password = $('inputPassword3').val();
+                    var grup = $('input[name=gridRadios]:checked', '#formsignup').val();
+                    var monitor = JSON.stringify({Nom: nom, Edat: edat, Grup: grup, Email: email, password: password})
+                    try {
+                        const response = await axios.post("https://esplaisolnaixent.herokuapp.com/monitors/", monitor );
+                        const data = await response.data;
+                        if (data.code === "201") {
+                            alert("Usuari creat, s'ha enviat un correu electrònic de confirmació");
+                            localStorage.setItem('logged', 'true');
+                            window.location.replace("monitors.html");
+                        }  
+                    } catch (error) {
+                        console.log(error); 
+                    }
                 }
             } catch (error) {
                 console.log(error); 
