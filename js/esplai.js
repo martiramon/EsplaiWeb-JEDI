@@ -10,13 +10,23 @@ $(function() {
     $("#formlogin").on({
         submit: async function(e) {
             e.preventDefault();
+            if ($('.alert')) $('.alert').remove();
             try {
                 const response = await axios.get("https://esplaisolnaixent.herokuapp.com/monitors/?Email=" + $('#inputEmail3').val());
                 const data = await response.data;
-                console.log(data);
-                console.log($('#inputPassword3').val());
-                if (data.password === $('#inputPassword3').val()) {
-                    localStorage.setItem('logged', 'true');
+                if (data[0]) {
+                    if (data[0].password === $('#inputPassword3').val()) {
+                        localStorage.setItem('logged', 'true');
+                        window.location.replace("monitors.html");
+                    } else {
+                        $('#titollogin').after(`<div class="alert alert-danger" role="alert">
+                        Email i/o contrassenya incorrectes!
+                        </div>`)
+                    }   
+                } else {
+                    $('#titollogin').after(`<div class="alert alert-danger" role="alert">
+                    Email i/o contrassenya incorrectes!
+                    </div>`)
                 }
             } catch (error) {
                 console.log(error); 
