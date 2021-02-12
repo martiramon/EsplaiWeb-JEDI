@@ -98,6 +98,10 @@ hr {
         width: 100%;
         height: auto;
     }
+    .fotosencera {
+        width: 100%;
+        height: auto;
+    }
 }
 @media screen and (min-width: 770px) {
     #logo {
@@ -112,6 +116,10 @@ hr {
         width: 700px;
         height: 394px;
     }
+    .fotosencera {
+        width: 75%;
+        height: auto;
+    }
 }
 
 .fotosjuntes {
@@ -119,10 +127,7 @@ hr {
     height: auto;
 }
 
-.fotosencera {
-    width: 75%;
-    height: auto;
-}
+
 
 .btnlila {
     background-color: rgb(99, 48, 119);
