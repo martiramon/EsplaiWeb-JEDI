@@ -12,7 +12,7 @@ $(function() {
         submit: async function(e) {
             e.preventDefault();
             if ($('.alert')) $('.alert').remove();
-            if ($('#inputEmail3').val() ==" ") {
+            if ($('#inputEmail3').val() =="") {
                 $('#titollogin').after(`<div class="alert alert-danger" role="alert">
                         Email i/o contrassenya incorrectes!
                         </div>`);
@@ -47,7 +47,7 @@ $(function() {
         submit: async function(e) {
             e.preventDefault();
             if ($('.alert')) $('.alert').remove();
-            if ($('#inputEmail').val() ==" ") {
+            if ($('#inputEmail').val() =="") {
                 $('#titollogin').after(`<div class="alert alert-danger" role="alert">
                         Email i/o contrassenya incorrectes!
                         </div>`);
