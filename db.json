@@ -2,26 +2,26 @@
     "monitors": [
       {
         "id": 1,
-        "name": "Martí",
-        "edat": 24,
-        "grup": "grans",
-        "email": "marti@gmail.com",
+        "Nom": "Martí",
+        "Edat": 24,
+        "Grup": "grans",
+        "Correu electrònic": "marti@gmail.com",
         "password": "1234"
       },
       {
         "id": 2,
-        "name": "Marta",
-        "edat": 24,
-        "grup": "joves",
-        "email": "marta@gmail.com",
+        "Nom": "Marta",
+        "Edat": 24,
+        "Grup": "joves",
+        "Correu electrònic": "marta@gmail.com",
         "password": "1234"
       },
       {
         "id": 3,
-        "name": "Laia",
-        "edat": 20,
-        "grup": "petits",
-        "email": "laia@gmail.com",
+        "Nom": "Laia",
+        "Edat": 20,
+        "Grup": "petits",
+        "Correu electrònic": "laia@gmail.com",
         "password": "1234"
       }
     ]
