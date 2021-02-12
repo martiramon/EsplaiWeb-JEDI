@@ -47,7 +47,7 @@ $(function() {
         submit: async function(e) {
             e.preventDefault();
             if ($('.alert')) $('.alert').remove();
-            if ($('#inputEmail3').val() ==" ") {
+            if ($('#inputEmail').val() ==" ") {
                 $('#titollogin').after(`<div class="alert alert-danger" role="alert">
                         Email i/o contrassenya incorrectes!
                         </div>`);
@@ -62,8 +62,8 @@ $(function() {
                     } else {
                         var nom = $('#inputName').val();
                         var edat = $('#inputAge').val();
-                        var email = $('#inputEmail3').val();
-                        var contrasenya = $('#inputPassword3').val();
+                        var email = $('#inputEmail').val();
+                        var contrasenya = $('#inputPassword').val();
                         var grup = $('input[name=gridRadios]:checked', '#formsignup').val();
                         var monitor = { 'Nom': nom, 'Edat': edat, 'Grup': grup, 'Email': email, 'password': contrasenya}
                         try {
