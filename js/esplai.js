@@ -2,6 +2,28 @@ $(document).on("scroll",  function () {
     var $nav = $(".navbar");
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
 });
+function logout() {
+    localStorage.clear();
+    window.location.replace("monitors.html");
+}
+$(function() {
+    $("#formlogin").on({
+        submit: async function(e) {
+            e.preventDefault();
+            try {
+                const response = await axios.get("https://esplaisolnaixent.herokuapp.com/monitors/?Email=" + $('#inputEmail3').val());
+                const data = await response.data;
+                console.log(data);
+                console.log($('#inputPassword3').val());
+                if (data.password === $('#inputPassword3').val()) {
+                    localStorage.setItem('logged', 'true');
+                }
+            } catch (error) {
+                console.log(error); 
+            }
+        }
+    });
+});
   
 async function taulaMonitors() {
     try {
@@ -28,17 +50,14 @@ async function taulaMonitors() {
         var table = document.createElement("table");
         table.className = "table";
     
-            // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
-    
-            var tr = table.insertRow(-1);                   // TABLE ROW.
+         var tr = table.insertRow(-1);                   
     
             for (var i = 0; i < col.length; i++) {
-                var th = document.createElement("th");      // TABLE HEADER.
+                var th = document.createElement("th");      
                 th.innerHTML = col[i];
                 tr.appendChild(th);
             }
     
-            // ADD JSON DATA TO THE TABLE AS ROWS.
             for (var i = 0; i < monitors.length; i++) {
     
                 tr = table.insertRow(-1);
@@ -48,21 +67,21 @@ async function taulaMonitors() {
                     tabCell.innerHTML = monitors[i][col[j]];
                 }
             }
-            
-            // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+
             $('#afegir').append('<h1 id="llistamonis">Llista de monitors/es </h1>');
             $('#llistamonis').after(div);
             $('#divtable').append(table);
+            $('.table').after(`<button type="button" class="btn btnlila" onclick="logout()">Tancar Sessió</button></div>`)
     } catch (error) {
         console.log(error); 
     }
 };
 
 function testLogged() {
-if (localStorage.getItem("logged") === null || localStorage.getItem("logged") === false ) {
+if (localStorage.getItem("logged") === null || localStorage.getItem("logged") === "false" ) {
         $('#afegir').append(`<div class="row justify-content-center"> <h5> Aquesta pàgina és privada, només hi poden accedir monitors/es del centre. Si ho ets, inicia sessió o registra't!" </h5> </div> 
-        <div class="row justify-content-center"> <button type="button" class="btn btnlila">Iniciar Sessió</button>
-        <button type="button" class="btn btnlila">Registrar-me</button></div>`)
+        <div class="row justify-content-center"> <button type="button" class="btn btnlila" onclick="window.location.href='login.html';">Iniciar Sessió</button>
+        <button type="button" class="btn btnlila" onclick="window.location.href='signup.html';">Registrar-me</button></div>`)
     }
     else {
         taulaMonitors();

@@ -5,7 +5,7 @@
         "Nom": "Martí",
         "Edat": 24,
         "Grup": "grans",
-        "Correu electrònic": "marti@gmail.com",
+        "Email": "marti@gmail.com",
         "password": "1234"
       },
       {
@@ -13,7 +13,7 @@
         "Nom": "Marta",
         "Edat": 24,
         "Grup": "joves",
-        "Correu electrònic": "marta@gmail.com",
+        "Email": "marta@gmail.com",
         "password": "1234"
       },
       {
@@ -21,7 +21,7 @@
         "Nom": "Laia",
         "Edat": 20,
         "Grup": "petits",
-        "Correu electrònic": "laia@gmail.com",
+        "Email": "laia@gmail.com",
         "password": "1234"
       }
     ]
