@@ -128,12 +128,14 @@ hr {
     background-color: rgb(99, 48, 119);
     color: white;
     width: 10rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
 }
 
 #divtable {
     width: 100%;
+}
+
+.form-check-input:checked {
+    background-color:rgb(99, 48, 119);
+    border-color: rgb(99, 48, 119);
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(157, 83, 189, 0.301);
 }

@@ -34,6 +34,30 @@ $(function() {
         }
     });
 });
+
+$(function() {
+    $("#formsignup").on({
+        submit: async function(e) {
+            e.preventDefault();
+            if ($('.alert')) $('.alert').remove();
+            try {
+                const response = await axios.get("https://esplaisolnaixent.herokuapp.com/monitors/?Email=" + $('#inputEmail3').val());
+                const data = await response.data;
+                if (data[0]) {
+                        $('#titolsignup').after(`<div class="alert alert-danger" role="alert">
+                        Email ja regsitra't!
+                        </div>`) 
+                } else {
+                    $('#titollogin').after(`<div class="alert alert-danger" role="alert">
+                    Email i/o contrassenya incorrectes!
+                    </div>`)
+                }
+            } catch (error) {
+                console.log(error); 
+            }
+        }
+    });
+});
   
 async function taulaMonitors() {
     try {
@@ -41,7 +65,6 @@ async function taulaMonitors() {
         const data = await response.data;
         var monitors = data;
         for(var i = 0; i < monitors.length; i++) {
-            delete monitors[i]['id'];
             delete monitors[i]['password'];
         }
     
@@ -81,7 +104,7 @@ async function taulaMonitors() {
             $('#afegir').append('<h1 id="llistamonis">Llista de monitors/es </h1>');
             $('#llistamonis').after(div);
             $('#divtable').append(table);
-            $('.table').after(`<button type="button" class="btn btnlila" onclick="logout()">Tancar Sessió</button></div>`)
+            $('.table').after(`<button type="button" class="btn btnlila m-1" onclick="logout()">Tancar Sessió</button></div>`)
     } catch (error) {
         console.log(error); 
     }
@@ -90,8 +113,8 @@ async function taulaMonitors() {
 function testLogged() {
 if (localStorage.getItem("logged") === null || localStorage.getItem("logged") === "false" ) {
         $('#afegir').append(`<div class="row justify-content-center"> <h5> Aquesta pàgina és privada, només hi poden accedir monitors/es del centre. Si ho ets, inicia sessió o registra't!" </h5> </div> 
-        <div class="row justify-content-center"> <button type="button" class="btn btnlila" onclick="window.location.href='login.html';">Iniciar Sessió</button>
-        <button type="button" class="btn btnlila" onclick="window.location.href='signup.html';">Registrar-me</button></div>`)
+        <div class="row justify-content-center"> <button type="button" class="btn btnlila m-1" onclick="window.location.href='login.html';">Iniciar Sessió</button>
+        <button type="button" class="btn btnlila m-1" onclick="window.location.href='signup.html';">Registrar-me</button></div>`)
     }
     else {
         taulaMonitors();

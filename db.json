@@ -1,7 +1,6 @@
 {
     "monitors": [
       {
-        "id": 1,
         "Nom": "Martí",
         "Edat": 24,
         "Grup": "grans",
@@ -9,7 +8,6 @@
         "password": "1234"
       },
       {
-        "id": 2,
         "Nom": "Marta",
         "Edat": 24,
         "Grup": "joves",
@@ -17,7 +15,6 @@
         "password": "1234"
       },
       {
-        "id": 3,
         "Nom": "Laia",
         "Edat": 20,
         "Grup": "petits",
