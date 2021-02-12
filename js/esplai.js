@@ -47,16 +47,16 @@ $(function() {
         submit: async function(e) {
             e.preventDefault();
             if ($('.alert')) $('.alert').remove();
-            if ($('#inputEmail').val() =="") {
-                $('#titollogin').after(`<div class="alert alert-danger" role="alert">
-                        Email i/o contrassenya incorrectes!
+            if ($('#inputEmail').val() =="" || $('#inputName').val() =="" || $('#inputAge').val() =="" || $('#inputPassword').val() =="") {
+                $('#titolregistre').after(`<div class="alert alert-danger" role="alert">
+                        Introdueix totes les dades!
                         </div>`);
             } else {
                 try {
                     const response = await axios.get("https://esplaisolnaixent.herokuapp.com/monitors/?Email=" + $('#inputEmail3').val());
                     const data = await response.data;
                     if (data[0]) {
-                            $('#titolsignup').after(`<div class="alert alert-danger" role="alert">
+                            $('#titolregistre').after(`<div class="alert alert-danger" role="alert">
                             Ja existeix un usuari amb aquest Email!
                             </div>`) 
                     } else {
