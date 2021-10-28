@@ -1,149 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
-            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../css/esplai.css">
-        <script src="https://kit.fontawesome.com/0a755e7f52.js" crossorigin="anonymous"></script>
-        <title>Esplai Sol Naixent</title>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"
-            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" ></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="../js/esplai.js"></script>
-    </head>
-    <body class="h-100 m-0">
-        <div id="root" class="row h-100 m-0 flex-column">
-            <header class="m-0 p-0">
-                <nav id="navbarfixed" class="navbar navbar-expand-lg navbar-light shadow fixed-top">
-                    <div class="container">
-                    <a class="navbar-brand text-white" href="../index.html">
-                        <img class="navbarLogo" src="../media/LogoBN.png" alt="Logo" >
-                        Esplai Sol Naixent</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.html">Inici</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="quisom.html">Qui som?</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="quefem.html">Què fem a l'esplai?</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="ideari.html">El nostre ideari</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="onsom.html">On som?</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="monitors.html">Zona monitors/es</a>
-                            </li>
-                        </ul>
-                    </div>
-                    </div>
-                </nav>
-            </header>
-            <section class="py-5">
-                <div class="container">
-                    <div class="d-flex flex-row justify-content-center">
-                        <h1 class="display-4 mt-4 mb-2">QUÈ FEM?</h1>
-                    </div>
-                    <div class="d-flex flex-row justify-content-center">
-                        <img class="fotosencera" src="../media/colonies2.jpg" alt="fotografia colònies">
-                    </div>
-                    <div class="d-flex flex-column text-center mt-2">
-                        <p>L'Esplai és un espai on ens divertim i descobrim el món jugant. On aprenem, fem excursions i ens impliquem en el nostre entorn per transformar la societat. A l’esplai 
-                            fem noves amigues i amics!</p>
-                        <p>A l'Esplai Sol Naixent hi participen infants de 5 a 17 anys (P5 - 2n de batxillerat o equivalent) i monitors i monitores de més de 18 anys. </p>
-                        <p>A l’esplai creiem en el joc com a eina educativa, per tal de transmetre a infants i joves uns valors (els quals pots veure al nostre ideari) i per aprendre a conviure. 
-                            Ens agrada ensenyar a través de la diversió, entre rialles, creiem que podem aprendre aspectes molt importants, tant els infants dels monitors com a la inversa.</p>
-                        <p>Fem esplai cada dissabte de 17h a 19h, al nostre local i per tot el poble. També fem excursions d'un dia o de tot el cap de setmana, i rutes, acampades i colònies.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12 text-center">
-                            <img class="fotosjuntes" src="../media/rotllana.jpg" alt="foto colònies">
-                        </div>
-                        <div class="col-lg-6 col-md-12 text-lg-start text-sm-center text-center">
-                            <img class="fotosjuntes" src="../media/excursio.jpg" alt="foto excursió">
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-lg-7 col-12 text-lg-start text-sm-center text-center">
-                            <h1 class="font-weight-light mt-4 mb-2">SORTIDES</h1>
-                            <p class="justificat">Les sortides durant l'any poden variar, però normalment n'hi ha una cada trimestre, i s'acostumen a repartir de la següent forma:</p>
-                            <h3>1r Trimestre: Sortida d'un dia</h3>
-                            <p class="justificat">Realitzem una sortida d'un dia, ja sigui una caminada, una visita cultural, un esport d'aventura, etc.  
-                            </p>
-                            <h3>2n Trimestre: Minicolònies</h3>
-                            <p class="justificat">Realitzem una sortida de cap de setmana, a una casa de colònies propera al nostre poble.
-                            </p>
-                            <h3>3r Trimestre: Acampada</h3>
-                            <p class="justificat">Realitzem una sortida de cap de setmana amb tendes, a terrenys d'acampada propers al nostre poble.  
-                            </p>
-                            <h3>Estiu: Colònies de 5 dies</h3>
-                            <p class="justificat">Realitzem unes colònies de 5 dies a algun lloc de Catalunya. Allà fem activitats, excursions, tallers, reflexions i aprenem a
-                                  conviure fora de casa. 
-                            </p>
-                            <h3>Joves: Rutes o sortides extra</h3>
-                            <p class="justificat">El grup de joves (els 2 últims anys com a infants de l'Esplai) poden realitzar algunes rutes o sortides extra. Durant el curs fan 
-                                 activitats per guanyar diners i auto-subvencionar-se-les.
-                            </p>
-                        </div>
-                        <div class="col-lg-5 col-12 text-center">
-                            <img id="logo" src="../media/caminada1.jpg" alt="foto caminada">
-                        </div>
-                    </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col-12">
-                            <iframe src="https://www.youtube.com/embed/xKCdWwL4xBw" frameborder="0" allow="accelerometer; autoplay; 
-                            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer class="text-white text-center text-lg-start footer">
-                <div class="container p-4">
-                  <div class="row">
-                    <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Contacte</h5>
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                C/ Del Parc, 4
-                            </li>
-                            <li>
-                                Ordal, Subirats (08739)
-                            </li>
-                            <li>
-                                esplaisolnaixent@gmail.com
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Segueix-nos a</h5>
-                        <a href="https://www.youtube.com/channel/UCCcNtQWA8wibCU4wsHJ2QJA" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/esplaisolnaixent/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://ca-es.facebook.com/esplai.solnaixent" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                    </div>
-                    <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase mb-0">Amb la col·laboració de</h5>
-                        <a href="https://www.peretarres.org/mcecc" target="_blank" rel="noopener noreferrer"><img id="logomcecc" src="../media/mcecc.png" alt="MCECC"></a>
-                        <a href="https://subirats.cat/" target="_blank" rel="noopener noreferrer"><img id="logosubirats" src="../media/subirats.png" alt="Ajuntament de Subirats"></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center p-3 copyright">
-                  © Copyright Esplai Sol Naixent
-                </div>
-              </footer>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/esplai.css" />
+    <script
+      src="https://kit.fontawesome.com/0a755e7f52.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Esplai Sol Naixent</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      crossorigin="anonymous"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/esplai.js"></script>
+  </head>
+  <body class="h-100 m-0">
+    <div id="root" class="row h-100 m-0 flex-column">
+      <header class="m-0 p-0">
+        <nav
+          id="navbarfixed"
+          class="navbar navbar-expand-lg navbar-light shadow fixed-top"
+        >
+          <div class="container">
+            <a class="navbar-brand text-white" href="../index.html">
+              <img class="navbarLogo" src="../media/LogoBN.png" alt="Logo" />
+              Esplai Sol Naixent</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarResponsive"
+              aria-controls="navbarResponsive"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Inici</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="quisom.html">Qui som?</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="quefem.html">Què fem a l'esplai?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="ideari.html">El nostre ideari</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="onsom.html">On som?</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section class="py-5">
+        <div class="container">
+          <div class="d-flex flex-row justify-content-center">
+            <h1 class="display-4 mt-4 mb-2">QUÈ FEM?</h1>
+          </div>
+          <div class="d-flex flex-row justify-content-center">
+            <img
+              class="fotosencera"
+              src="../media/colonies2.jpg"
+              alt="fotografia colònies"
+            />
+          </div>
+          <div class="d-flex flex-column text-center mt-2">
+            <p>
+              L'Esplai és un espai on ens divertim i descobrim el món jugant. On
+              aprenem, fem excursions i ens impliquem en el nostre entorn per
+              transformar la societat. A l’esplai fem noves amigues i amics!
+            </p>
+            <p>
+              A l'Esplai Sol Naixent hi participen infants de 5 a 17 anys (P5 -
+              2n de batxillerat o equivalent) i monitors i monitores de més de
+              18 anys.
+            </p>
+            <p>
+              A l’esplai creiem en el joc com a eina educativa, per tal de
+              transmetre a infants i joves uns valors (els quals pots veure al
+              nostre ideari) i per aprendre a conviure. Ens agrada ensenyar a
+              través de la diversió, entre rialles, creiem que podem aprendre
+              aspectes molt importants, tant els infants dels monitors com a la
+              inversa.
+            </p>
+            <p>
+              Fem esplai cada dissabte de 17h a 19h, al nostre local i per tot
+              el poble. També fem excursions d'un dia o de tot el cap de
+              setmana, i rutes, acampades i colònies.
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-12 text-center">
+              <img
+                class="fotosjuntes"
+                src="../media/rotllana.jpg"
+                alt="foto colònies"
+              />
+            </div>
+            <div
+              class="
+                col-lg-6 col-md-12
+                text-lg-start text-sm-center text-center
+              "
+            >
+              <img
+                class="fotosjuntes"
+                src="../media/excursio.jpg"
+                alt="foto excursió"
+              />
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div
+              class="col-lg-7 col-12 text-lg-start text-sm-center text-center"
+            >
+              <h1 class="font-weight-light mt-4 mb-2">SORTIDES</h1>
+              <p class="justificat">
+                Les sortides durant l'any poden variar, però normalment n'hi ha
+                una cada trimestre, i s'acostumen a repartir de la següent
+                forma:
+              </p>
+              <h3>1r Trimestre: Sortida d'un dia</h3>
+              <p class="justificat">
+                Realitzem una sortida d'un dia, ja sigui una caminada, una
+                visita cultural, un esport d'aventura, etc.
+              </p>
+              <h3>2n Trimestre: Minicolònies</h3>
+              <p class="justificat">
+                Realitzem una sortida de cap de setmana, a una casa de colònies
+                propera al nostre poble.
+              </p>
+              <h3>3r Trimestre: Acampada</h3>
+              <p class="justificat">
+                Realitzem una sortida de cap de setmana amb tendes, a terrenys
+                d'acampada propers al nostre poble.
+              </p>
+              <h3>Estiu: Colònies de 5 dies</h3>
+              <p class="justificat">
+                Realitzem unes colònies de 5 dies a algun lloc de Catalunya.
+                Allà fem activitats, excursions, tallers, reflexions i aprenem a
+                conviure fora de casa.
+              </p>
+              <h3>Joves: Rutes o sortides extra</h3>
+              <p class="justificat">
+                El grup de joves (els 2 últims anys com a infants de l'Esplai)
+                poden realitzar algunes rutes o sortides extra. Durant el curs
+                fan activitats per guanyar diners i auto-subvencionar-se-les.
+              </p>
+            </div>
+            <div class="col-lg-5 col-12 text-center">
+              <img id="logo" src="../media/caminada1.jpg" alt="foto caminada" />
+            </div>
+          </div>
+          <div class="row mt-3 text-center">
+            <div class="col-12">
+              <iframe
+                src="https://www.youtube.com/embed/xKCdWwL4xBw"
+                frameborder="0"
+                allow="accelerometer; autoplay; 
+                            clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-        </script>
-    </body>
+      </section>
+      <footer class="text-white text-center text-lg-start footer">
+        <div class="container p-4">
+          <div class="row">
+            <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Contacte</h5>
+              <ul class="list-unstyled mb-0">
+                <li>C/ Del Parc, 4</li>
+                <li>Ordal, Subirats (08739)</li>
+                <li>esplaisolnaixent@gmail.com</li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase">Segueix-nos a</h5>
+              <a
+                href="https://www.youtube.com/channel/UCCcNtQWA8wibCU4wsHJ2QJA"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/esplaisolnaixent/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://ca-es.facebook.com/esplai.solnaixent"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0">Amb la col·laboració de</h5>
+              <a
+                href="https://www.peretarres.org/mcecc"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img id="logomcecc" src="../media/mcecc.png" alt="MCECC"
+              /></a>
+              <a
+                href="https://subirats.cat/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  id="logosubirats"
+                  src="../media/subirats.png"
+                  alt="Ajuntament de Subirats"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center p-3 copyright">
+          © Copyright Esplai Sol Naixent
+        </div>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
